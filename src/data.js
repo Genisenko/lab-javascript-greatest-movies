@@ -2001,3 +2001,43 @@ const movies = [
     score: 8
   }
 ];
+
+
+/*function scoresAverage(moviesArray) {
+
+  const scores = moviesArray.map(number => number.score)
+  const allScores = scores.reduce(function (accumulator, currentValue) {
+    return accumulator + currentValue;
+  });
+  const average = allScores / scores.length
+
+  return (Math.round(average).toFixed(2))
+}
+*/
+
+/*function scoresAverage2(moviesArray) {
+
+  const scores = moviesArray.reduce((avg, value, _, {
+    length
+  }) => {return avg + (value / length);
+}, 0);
+
+  return Math.round(scores).toFixed(2)
+}
+
+((a, b) => a.title.localeCompare(b.title))
+sort((a, b) => a.title - b.title))
+*/
+
+
+function orderAlphabetically(moviesArray) {
+  const ordered = ((moviesArray).sort(function(a, b) {
+    var textA = a.title.toUpperCase();
+    var textB = b.title.toUpperCase();
+    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+}));
+   
+   return ordered.splice(0,20)
+  
+   }
+console.log(orderAlphabetically(movies))
